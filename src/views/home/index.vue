@@ -2,8 +2,8 @@
  * @Description: <>
  * @Author: candy littlecandyi@163.com
  * @Date: 2022-11-08 01:14:12
- * @LastEditors: candy littlecandyi@163.com
- * @LastEditTime: 2022-11-11 20:23:37
+ * @LastEditors: menggt mengguotang@gdcattsoft.com
+ * @LastEditTime: 2022-11-22 18:05:12
 -->
 <template>
   <div>
@@ -16,6 +16,7 @@
   </div>
   <HelloWorld msg="Vite + Vue" />
   <UsePinia />
+  <h1>哈哈哈哈哈哈</h1>
 </template>
 
 <script setup lang="ts">
