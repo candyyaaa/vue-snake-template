@@ -3,7 +3,7 @@
  * @Author: candy littlecandyi@163.com
  * @Date: 2022-11-08 01:14:12
  * @LastEditors: menggt mengguotang@gdcattsoft.com
- * @LastEditTime: 2022-11-22 18:05:12
+ * @LastEditTime: 2022-12-14 16:32:18
 -->
 <template>
   <div>
@@ -16,12 +16,30 @@
   </div>
   <HelloWorld msg="Vite + Vue" />
   <UsePinia />
-  <h1>哈哈哈哈哈哈</h1>
+  <h1 @click="handleLogin">哈哈哈哈哈哈</h1>
+  <div>{{ dayjs().format('YYYY-MM-DD') }}</div>
 </template>
 
 <script setup lang="ts">
-import HelloWorld from '@/components/HelloWorld.vue'
+import dayjs from 'dayjs'
+// import HelloWorld from '@/components/HelloWorld.vue'
 import UsePinia from '@/components/use-pinia.vue'
+import { login } from '../../api/user'
+
+const handleLogin = () => {
+  const query = {
+    account: 'candy',
+    password: '123456q!'
+  }
+
+  login(query).then(res => {
+    console.log('login then----------->', res)
+  }).catch(err => {
+    console.log('login catch----------->', err)
+  }).finally(() => {
+
+  })
+}
 </script>
 
 <style scoped lang="scss">
