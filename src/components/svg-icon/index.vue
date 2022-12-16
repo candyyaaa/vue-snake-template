@@ -12,7 +12,6 @@
 </template>
 
 <script setup lang="ts">
-
 interface Props {
   prefix?: string
   name?: string

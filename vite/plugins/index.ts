@@ -17,7 +17,10 @@ import createCompression from './compression'
 import createPages from './pages'
 import createImagemin from './imagemin'
 
-export default function createVitePlugins(viteEnv: Record<string, string>, isBuild: boolean = false) {
+export default function createVitePlugins(
+  viteEnv: Record<string, string>,
+  isBuild = false
+) {
   const vitePlugins: (PluginOption | PluginOption[])[] = [
     vue({
       reactivityTransform: true

@@ -17,9 +17,9 @@ const routes: RouteRecordRaw[] = [
     meta: {
       title: '首页',
       keepAlive: true,
-      requireAuth: true,
+      requireAuth: true
     },
-    component: () => import('@/views/home/index.vue'),
+    component: () => import('@/views/home/index.vue')
   },
   {
     path: '/login',
@@ -27,15 +27,15 @@ const routes: RouteRecordRaw[] = [
     meta: {
       title: '登录',
       keepAlive: true,
-      requireAuth: false,
+      requireAuth: false
     },
-    component: () => import('@/views/login/index.vue'),
+    component: () => import('@/views/login/index.vue')
   }
 ]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
+  routes
 })
 
 // 路由切换之前触发

@@ -3,13 +3,13 @@
  * @Author: candy littlecandyi@163.com
  * @Date: 2022-11-08 00:53:21
  * @LastEditors: menggt mengguotang@gdcattsoft.com
- * @LastEditTime: 2022-12-14 17:23:38
+ * @LastEditTime: 2022-12-15 14:51:38
  */
 import { defineConfig, loadEnv } from 'vite'
 import { resolve } from 'path'
 import createVitePlugins from './vite/plugins'
 
-function pathResolve (dir: string) {
+function pathResolve(dir: string) {
   return resolve(process.cwd(), '.', dir)
 }
 
@@ -28,12 +28,28 @@ export default ({ mode, command }) => {
         { find: '#', replacement: pathResolve('types') + '/' }
       ]
     },
+    esbuild: {
+      drop: ['console', 'debugger']
+    },
     build: {
-      // 移除 console、debugger
-      terserOptions: {
-        compress: {
-          drop_console: true,
-          drop_debugger: true
+      outDir: `dist-snake`,
+      assetsInlineLimit: 1000,
+      rollupOptions: {
+        output: {
+          // 分类输出
+          chunkFileNames: 'js/[name]-[hash].js',
+          entryFileNames: 'js/[name]-[hash].js',
+          assetFileNames: '[ext]/[name]-[hash].[ext]',
+          manualChunks(id) {
+            // 超大静态资源拆分
+            if (id.includes('node_modules')) {
+              return id
+                .toString()
+                .split('node_modules/')[1]
+                .split('/')[0]
+                .toString()
+            }
+          }
         }
       }
     },
@@ -51,7 +67,8 @@ export default ({ mode, command }) => {
           // apifox 本地 Mock
           target: 'http://127.0.0.1:4523',
           changeOrigin: true,
-          rewrite: (path: string) => path.replace(/^\/m1^\/699628-0-default^\/api/, '')
+          rewrite: (path: string) =>
+            path.replace(/^\/m1^\/699628-0-default^\/api/, '')
         }
       }
     },

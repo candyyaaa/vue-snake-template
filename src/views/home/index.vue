@@ -2,8 +2,8 @@
  * @Description: <>
  * @Author: candy littlecandyi@163.com
  * @Date: 2022-11-08 01:14:12
- * @LastEditors: candy littlecandyi@163.com
- * @LastEditTime: 2022-12-15 00:49:10
+ * @LastEditors: menggt mengguotang@gdcattsoft.com
+ * @LastEditTime: 2022-12-16 14:37:12
 -->
 <template>
   <div v-loading="loading">
@@ -20,16 +20,15 @@
     <h1>哈哈哈哈哈哈</h1>
     <div>{{ dayjs().format('YYYY-MM-DD') }}</div>
 
-
     <el-button type="primary" @click="handleLogin">登录</el-button>
   </div>
 </template>
 
 <script setup lang="ts">
 import dayjs from 'dayjs'
-// import HelloWorld from '@/components/HelloWorld.vue'
+// import HelloWorld from "@/components/HelloWorld.vue"
 import UsePinia from '@/components/use-pinia.vue'
-import { login } from '../../api/user'
+import { login } from '@/api/user'
 
 const loading = ref<boolean>(false)
 
@@ -41,13 +40,16 @@ const handleLogin = () => {
     password: '123456q!'
   }
 
-  login(query).then(res => {
-    console.log('login then----------->', res)
-  }).catch(err => {
-    console.log('login catch----------->', err)
-  }).finally(() => {
-    loading.value = false
-  })
+  login(query)
+    .then((res) => {
+      console.log('login then----------->', res)
+    })
+    .catch((err) => {
+      console.log('login catch----------->', err)
+    })
+    .finally(() => {
+      loading.value = false
+    })
 }
 </script>
 
@@ -57,9 +59,11 @@ const handleLogin = () => {
   padding: 1.5em;
   will-change: filter;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }

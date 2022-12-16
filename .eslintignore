@@ -1,0 +1,8 @@
+node_modules
+dist/
+dist-snake/
+test
+build/
+.vscode
+.github
+.husky

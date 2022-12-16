@@ -12,7 +12,7 @@ export const useUserStore = defineStore({
   id: 'user',
   state: () => {
     return {
-      name: '张三',
+      name: '张三'
     }
   },
   actions: {

@@ -8,6 +8,9 @@
 export const treeToArray = (tree: any) => {
   return tree.reduce((res: any, item: any) => {
     const { children, ...i } = item
-    return res.concat(i, children && children.length ? treeToArray(children) : [])
+    return res.concat(
+      i,
+      children && children.length ? treeToArray(children) : []
+    )
   }, [])
 }

@@ -18,10 +18,7 @@ export default function createComponents() {
     // 搜索子目录
     deep: true,
     // 自定义组件的解析器
-    resolvers: [
-      ElementPlusResolver(),
-      IconsResolver({ prefix: false })
-    ],
+    resolvers: [ElementPlusResolver(), IconsResolver({ prefix: false })],
     // 生成 `components.d.ts` 全局声明，
     // 也接受自定义文件名的路径
     dts: './types/components.d.ts',
