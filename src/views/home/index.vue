@@ -55,8 +55,8 @@ const handleLogin = () => {
 
 <style scoped lang="scss">
 .logo {
-  height: $header-height;
   padding: 1.5em;
+  height: $header-height;
   will-change: filter;
 }
 

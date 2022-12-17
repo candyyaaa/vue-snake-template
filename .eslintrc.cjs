@@ -2,8 +2,8 @@
  * @Description: <>
  * @Author: menggt mengguotang@gdcattsoft.com
  * @Date: 2022-12-16 11:13:59
- * @LastEditors: menggt mengguotang@gdcattsoft.com
- * @LastEditTime: 2022-12-16 14:36:25
+ * @LastEditors: candy littlecandyi@163.com
+ * @LastEditTime: 2022-12-18 01:24:32
  */
 module.exports = {
   env: {
@@ -28,7 +28,6 @@ module.exports = {
   },
   plugins: ['vue', '@typescript-eslint'],
   rules: {
-    'prettier/prettier': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     // 添加组件命名忽略规则
