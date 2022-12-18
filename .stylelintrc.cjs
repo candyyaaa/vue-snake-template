@@ -29,6 +29,19 @@ module.exports = {
   rules: {
     // 禁止在具有较高优先级的选择器后出现被其覆盖的较低优先级的选择器
     'no-descending-specificity': null,
+    'at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: ['tailwind', 'apply', 'variants', 'responsive', 'screen']
+      }
+    ],
+    'scss/at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: ['tailwind', 'apply', 'variants', 'responsive', 'screen']
+      }
+    ],
+    'import-notation': 'string',
     'selector-pseudo-element-no-unknown': [
       true,
       {
@@ -53,28 +66,26 @@ module.exports = {
       'justify-content',
       'align-items',
       'float',
-      'clear',
-      'overflow',
-      'overflow-x',
-      'overflow-y',
-      'padding',
-      'padding-top',
-      'padding-right',
-      'padding-bottom',
-      'padding-left',
-      'margin',
-      'margin-top',
-      'margin-right',
-      'margin-bottom',
-      'margin-left',
       'width',
       'min-width',
       'max-width',
       'height',
       'min-height',
       'max-height',
-      'font-size',
+      'margin',
+      'margin-top',
+      'margin-right',
+      'margin-bottom',
+      'margin-left',
+      'padding',
+      'padding-top',
+      'padding-right',
+      'padding-bottom',
+      'padding-left',
       'font-family',
+      'font-width',
+      'font-size',
+      'line-height',
       'text-align',
       'text-justify',
       'text-indent',
@@ -113,7 +124,11 @@ module.exports = {
       'box-shadow',
       'text-shadow',
       'resize',
-      'transition'
+      'transition',
+      'overflow',
+      'overflow-x',
+      'overflow-y',
+      'clear'
     ]
   }
 }

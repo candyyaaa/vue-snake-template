@@ -2,8 +2,8 @@
  * @Description: <>
  * @Author: candy littlecandyi@163.com
  * @Date: 2022-11-08 00:53:21
- * @LastEditors: menggt mengguotang@gdcattsoft.com
- * @LastEditTime: 2022-12-15 14:51:38
+ * @LastEditors: candy littlecandyi@163.com
+ * @LastEditTime: 2022-12-18 02:06:17
  */
 import { defineConfig, loadEnv } from 'vite'
 import { resolve } from 'path'
@@ -77,7 +77,7 @@ export default ({ mode, command }) => {
         scss: {
           modifyVars: {},
           javascriptEnabled: true,
-          additionalData: '@import "src/styles/var.scss";'
+          additionalData: '@import "src/assets/styles/var.scss";'
         }
       }
     }

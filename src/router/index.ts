@@ -2,8 +2,8 @@
  * @Description: <>
  * @Author: candy littlecandyi@163.com
  * @Date: 2022-11-08 01:12:48
- * @LastEditors: menggt mengguotang@gdcattsoft.com
- * @LastEditTime: 2022-12-14 14:57:20
+ * @LastEditors: candy littlecandyi@163.com
+ * @LastEditTime: 2022-12-18 23:06:38
  */
 import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
@@ -11,15 +11,35 @@ import type { RouteRecordRaw } from 'vue-router'
 import { start, done } from '@/utils/nporgress'
 
 const routes: RouteRecordRaw[] = [
+  // {
+  //   path: '/',
+  //   name: 'Index',
+  //   meta: {
+  //     title: '首页',
+  //     keepAlive: true,
+  //     requireAuth: true
+  //   },
+  //   component: () => import('@/views/home/index.vue')
+  // },
   {
     path: '/',
-    name: 'Index',
     meta: {
       title: '首页',
       keepAlive: true,
       requireAuth: true
     },
-    component: () => import('@/views/home/index.vue')
+    component: () => import('@/layouts/index.vue'),
+    children: [
+      {
+        path: '',
+        name: 'Home',
+        meta: {
+          title: '首页',
+          breadcrumb: false
+        },
+        component: () => import('@/views/home/index.vue')
+      }
+    ]
   },
   {
     path: '/login',

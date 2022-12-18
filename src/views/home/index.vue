@@ -2,8 +2,8 @@
  * @Description: <>
  * @Author: candy littlecandyi@163.com
  * @Date: 2022-11-08 01:14:12
- * @LastEditors: menggt mengguotang@gdcattsoft.com
- * @LastEditTime: 2022-12-16 14:37:12
+ * @LastEditors: candy littlecandyi@163.com
+ * @LastEditTime: 2022-12-19 01:12:40
 -->
 <template>
   <div v-loading="loading">
@@ -17,7 +17,7 @@
     </div>
     <HelloWorld msg="Vite + Vue" />
     <UsePinia />
-    <h1>哈哈哈哈哈哈</h1>
+    <h1 class="ha">哈哈哈哈哈哈</h1>
     <div>{{ dayjs().format('YYYY-MM-DD') }}</div>
 
     <el-button type="primary" @click="handleLogin">登录</el-button>
@@ -55,8 +55,8 @@ const handleLogin = () => {
 
 <style scoped lang="scss">
 .logo {
-  padding: 1.5em;
   height: $header-height;
+  padding: 1.5em;
   will-change: filter;
 }
 
@@ -66,5 +66,9 @@ const handleLogin = () => {
 
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+
+.ha {
+  @apply tw-w-full tw-text-pink-500;
 }
 </style>

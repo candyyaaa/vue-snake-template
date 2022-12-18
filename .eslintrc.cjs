@@ -3,7 +3,7 @@
  * @Author: menggt mengguotang@gdcattsoft.com
  * @Date: 2022-12-16 11:13:59
  * @LastEditors: candy littlecandyi@163.com
- * @LastEditTime: 2022-12-18 01:24:32
+ * @LastEditTime: 2022-12-18 02:04:19
  */
 module.exports = {
   env: {
@@ -37,6 +37,16 @@ module.exports = {
         //需要忽略的组件名
         ignores: ['index', 'login']
       }
-    ]
+    ],
+    '@typescript-eslint/ban-types': [
+      'error',
+      {
+        extendDefaults: true,
+        types: {
+          '{}': false
+        }
+      }
+    ],
+    '@typescript-eslint/no-explicit-any': ['off']
   }
 }
