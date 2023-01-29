@@ -2,8 +2,8 @@
  * @Description: <>
  * @Author: candy littlecandyi@163.com
  * @Date: 2022-11-08 00:53:21
- * @LastEditors: menggt mengguotang@gdcattsoft.com
- * @LastEditTime: 2023-01-29 17:38:55
+ * @LastEditors: candy littlecandyi@163.com
+ * @LastEditTime: 2023-01-29 22:19:10
  */
 import { defineConfig, loadEnv } from 'vite'
 // import { resolve } from 'path'
@@ -17,7 +17,7 @@ export default ({ mode, command }) => {
   const env = loadEnv(mode, process.cwd())
   console.log('env ----------->', env)
   return defineConfig({
-    base: './',
+    base: '/snake/',
     resolve: {
       //设置别名
       alias: [

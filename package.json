@@ -15,6 +15,7 @@
     "axios": "^1.2.1",
     "dayjs": "^1.11.7",
     "element-plus": "^2.2.26",
+    "lodash-es": "^4.17.21",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@iconify/json": "^2.1.152",
+    "@types/lodash-es": "^4.17.6",
     "@types/node": "^18.11.15",
     "@types/nprogress": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^5.46.1",

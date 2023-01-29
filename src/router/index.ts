@@ -3,7 +3,7 @@
  * @Author: candy littlecandyi@163.com
  * @Date: 2022-11-08 01:12:48
  * @LastEditors: candy littlecandyi@163.com
- * @LastEditTime: 2022-12-18 23:06:38
+ * @LastEditTime: 2023-01-07 02:01:47
  */
 import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
@@ -54,7 +54,7 @@ const routes: RouteRecordRaw[] = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/snake/'),
   routes
 })
 

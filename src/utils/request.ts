@@ -2,8 +2,8 @@
  * @Description: <>
  * @Author: menggt mengguotang@gdcattsoft.com
  * @Date: 2022-12-13 17:20:14
- * @LastEditors: menggt mengguotang@gdcattsoft.com
- * @LastEditTime: 2023-01-29 17:14:43
+ * @LastEditors: candy littlecandyi@163.com
+ * @LastEditTime: 2023-01-29 22:58:21
  */
 import axios from 'axios'
 import type { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
@@ -84,18 +84,71 @@ export const http = {
 
   post<T = any>(
     url: string,
-    data?: object,
+    params?: object,
     config?: AxiosRequestConfig
   ): Promise<T> {
-    return service.post(url, data, config)
+    return service.post(url, params, config)
+  },
+
+  postForm<T = any>(
+    url: string,
+    params?: object,
+    config?: AxiosRequestConfig
+  ): Promise<T> {
+    return service(
+      Object.assign(
+        {
+          method: 'post',
+          url,
+          data: params,
+          transformRequest: [
+            (data: any) => {
+              let ret = ''
+              for (const it in data) {
+                ret +=
+                  encodeURIComponent(it) +
+                  '=' +
+                  encodeURIComponent(data[it]) +
+                  '&'
+              }
+              return ret
+            }
+          ],
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        },
+        config
+      )
+    )
+  },
+
+  postJson<T = any>(
+    url: string,
+    params?: object,
+    config?: AxiosRequestConfig
+  ): Promise<T> {
+    return service(
+      Object.assign(
+        {
+          method: 'post',
+          url,
+          data: params,
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        },
+        config
+      )
+    )
   },
 
   put<T = any>(
     url: string,
-    data?: object,
+    params?: object,
     config?: AxiosRequestConfig
   ): Promise<T> {
-    return service.put(url, data, config)
+    return service.put(url, params, config)
   },
 
   delete<T = any>(url: string, config?: AxiosRequestConfig): Promise<T> {

@@ -56,15 +56,15 @@ module.exports = {
     ],
     // 指定样式的排序
     'order/properties-order': [
+      'display',
       'position',
+      'justify-content',
+      'align-items',
       'top',
       'right',
       'bottom',
       'left',
       'z-index',
-      'display',
-      'justify-content',
-      'align-items',
       'float',
       'width',
       'min-width',

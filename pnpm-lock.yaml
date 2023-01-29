@@ -1,10 +1,8 @@
 lockfileVersion: 5.4
 
-overrides:
-  bin-wrapper: npm:bin-wrapper-china
-
 specifiers:
   '@iconify/json': ^2.1.152
+  '@types/lodash-es': ^4.17.6
   '@types/node': ^18.11.15
   '@types/nprogress': ^0.2.0
   '@typescript-eslint/eslint-plugin': ^5.46.1
@@ -20,6 +18,7 @@ specifiers:
   eslint-plugin-vue: ^9.8.0
   husky: ^8.0.2
   lint-staged: ^13.1.0
+  lodash-es: ^4.17.21
   nprogress: ^0.2.0
   picocolors: ^1.0.0
   pinia: ^2.0.28
@@ -55,6 +54,7 @@ dependencies:
   axios: 1.2.1
   dayjs: 1.11.7
   element-plus: 2.2.26_vue@3.2.45
+  lodash-es: 4.17.21
   nprogress: 0.2.0
   pinia: 2.0.28_prq2uz4lho2pwp6irk4cfkrxwu
   vue: 3.2.45
@@ -62,6 +62,7 @@ dependencies:
 
 devDependencies:
   '@iconify/json': 2.1.152
+  '@types/lodash-es': 4.17.6
   '@types/node': 18.11.15
   '@types/nprogress': 0.2.0
   '@typescript-eslint/eslint-plugin': 5.46.1_imrg37k3svwu377c6q7gkarwmi
@@ -619,11 +620,9 @@ packages:
     resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==}
     dependencies:
       '@types/lodash': 4.14.191
-    dev: false
 
   /@types/lodash/4.14.191:
     resolution: {integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==}
-    dev: false
 
   /@types/minimatch/5.1.2:
     resolution: {integrity: sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA==}
@@ -1246,16 +1245,14 @@ packages:
       find-versions: 3.2.0
     dev: true
 
-  /bin-wrapper-china/0.1.0:
-    resolution: {integrity: sha512-1UCm17WYEbgry50tup+AQN+JGVEVzoW4f8HMl899k1lvuFxWKGZXl/G2fgxQxAckRjnloO3ijLVVEsv8zescUg==}
-    engines: {node: '>=8.3'}
-    hasBin: true
+  /bin-wrapper/4.1.0:
+    resolution: {integrity: sha512-hfRmo7hWIXPkbpi0ZltboCMVrU+0ClXR/JgbCKKjlDjQf6igXa7OwdqNcFWQZPZTgiY7ZpzE3+LjjkLiTN2T7Q==}
+    engines: {node: '>=6'}
     dependencies:
       bin-check: 4.1.0
       bin-version-check: 4.0.0
-      binary-mirror-config: 1.41.0
       download: 7.1.0
-      import-lazy: 4.0.0
+      import-lazy: 3.1.0
       os-filter-obj: 2.0.0
       pify: 4.0.1
     dev: true
@@ -1263,10 +1260,6 @@ packages:
   /binary-extensions/2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
     engines: {node: '>=8'}
-    dev: true
-
-  /binary-mirror-config/1.41.0:
-    resolution: {integrity: sha512-ZiIhR1s6Sv1Fv6qCQqfPjx0Cj86BgFlhqNxZgHkQOWcxJcMbO3mj1iqsuVjowYqJqeZL8e52+IEv7IRnSX6T6w==}
     dev: true
 
   /bl/1.2.3:
@@ -1530,7 +1523,7 @@ packages:
     dev: true
 
   /clone-response/1.0.2:
-    resolution: {integrity: sha512-yjLXh88P599UOyPTFX0POsd7WxnbsVsGohcwzHOLspIhhpalPw1BcqED8NblyZLKcGrL8dTgMlcaZxV2jAD41Q==}
+    resolution: {integrity: sha1-0dyXOSAxTfZ/vrlCI7TuNQI56Ws=}
     dependencies:
       mimic-response: 1.0.1
     dev: true
@@ -1738,7 +1731,7 @@ packages:
     requiresBuild: true
     dependencies:
       bin-build: 3.0.0
-      bin-wrapper: /bin-wrapper-china/0.1.0
+      bin-wrapper: 4.1.0
       logalot: 2.1.0
     dev: true
 
@@ -3071,7 +3064,7 @@ packages:
     requiresBuild: true
     dependencies:
       bin-build: 3.0.0
-      bin-wrapper: /bin-wrapper-china/0.1.0
+      bin-wrapper: 4.1.0
       execa: 5.1.1
       logalot: 2.1.0
     dev: true
@@ -3482,6 +3475,11 @@ packages:
       resolve-from: 4.0.0
     dev: true
 
+  /import-lazy/3.1.0:
+    resolution: {integrity: sha512-8/gvXvX2JMn0F+CDlSC4l6kOmVaLOO3XLkksI7CI3Ud95KDYJuYur2b9P/PUt/i/pDAMd/DulQsNbbbmRRsDIQ==}
+    engines: {node: '>=6'}
+    dev: true
+
   /import-lazy/4.0.0:
     resolution: {integrity: sha512-rKtvo6a868b5Hu3heneU+L4yEQ4jYKLtjpnPeUdK7h0yzXGmyBTypknlkCvHFBqfX9YlorEiMM6Dnq/5atfHkw==}
     engines: {node: '>=8'}
@@ -3866,7 +3864,7 @@ packages:
     requiresBuild: true
     dependencies:
       bin-build: 3.0.0
-      bin-wrapper: /bin-wrapper-china/0.1.0
+      bin-wrapper: 4.1.0
       logalot: 2.1.0
     dev: true
 
@@ -3877,7 +3875,7 @@ packages:
     requiresBuild: true
     dependencies:
       bin-build: 3.0.0
-      bin-wrapper: /bin-wrapper-china/0.1.0
+      bin-wrapper: 4.1.0
     dev: true
 
   /js-base64/2.6.4:
@@ -3904,7 +3902,7 @@ packages:
     dev: true
 
   /json-buffer/3.0.0:
-    resolution: {integrity: sha512-CuUqjv0FUZIdXkHPI8MezCnFCdaTAacej1TZYulLoAg1h/PhwkdXFN4V/gzY4g+fMBCOV2xF+rp7t2XD2ns/NQ==}
+    resolution: {integrity: sha1-Wx85evx11ne96Lz8Dkfh+aPZqJg=}
     dev: true
 
   /json-parse-even-better-errors/2.3.1:
@@ -4402,7 +4400,7 @@ packages:
     requiresBuild: true
     dependencies:
       bin-build: 3.0.0
-      bin-wrapper: /bin-wrapper-china/0.1.0
+      bin-wrapper: 4.1.0
     dev: true
 
   /ms/2.0.0:
@@ -4637,7 +4635,7 @@ packages:
     requiresBuild: true
     dependencies:
       bin-build: 3.0.0
-      bin-wrapper: /bin-wrapper-china/0.1.0
+      bin-wrapper: 4.1.0
     dev: true
 
   /os-filter-obj/2.0.0:
@@ -4933,7 +4931,7 @@ packages:
     requiresBuild: true
     dependencies:
       bin-build: 3.0.0
-      bin-wrapper: /bin-wrapper-china/0.1.0
+      bin-wrapper: 4.1.0
       execa: 4.1.0
     dev: true
 
@@ -5366,7 +5364,7 @@ packages:
     dev: true
 
   /responselike/1.0.2:
-    resolution: {integrity: sha512-/Fpe5guzJk1gPqdJLJR5u7eG/gNY4nImjbRDaVWVMRhne55TCmj2i9Q+54PBRfatRC8v/rIiv9BN0pMd9OV5EQ==}
+    resolution: {integrity: sha1-kYcg7ztjHFZCvgaPFa3lpG9Loec=}
     dependencies:
       lowercase-keys: 1.0.1
     dev: true
