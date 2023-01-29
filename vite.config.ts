@@ -2,16 +2,13 @@
  * @Description: <>
  * @Author: candy littlecandyi@163.com
  * @Date: 2022-11-08 00:53:21
- * @LastEditors: candy littlecandyi@163.com
- * @LastEditTime: 2022-12-18 02:06:17
+ * @LastEditors: menggt mengguotang@gdcattsoft.com
+ * @LastEditTime: 2023-01-29 17:38:55
  */
 import { defineConfig, loadEnv } from 'vite'
-import { resolve } from 'path'
+// import { resolve } from 'path'
+import { pathResolve } from './vite/utils'
 import createVitePlugins from './vite/plugins'
-
-function pathResolve(dir: string) {
-  return resolve(process.cwd(), '.', dir)
-}
 
 // https://vitejs.dev/config/
 export default ({ mode, command }) => {
@@ -28,10 +25,8 @@ export default ({ mode, command }) => {
         { find: '#', replacement: pathResolve('types') + '/' }
       ]
     },
-    esbuild: {
-      drop: ['console', 'debugger']
-    },
     build: {
+      minify: 'terser',
       outDir: `dist-snake`,
       assetsInlineLimit: 1000,
       rollupOptions: {
@@ -51,16 +46,26 @@ export default ({ mode, command }) => {
             }
           }
         }
+      },
+      terserOptions: {
+        compress: {
+          drop_console: command === 'build',
+          drop_debugger: command === 'build'
+        }
       }
     },
     plugins: createVitePlugins(env, command === 'build'),
     server: {
-      //启动端口
+      // 是否开启 https
+      https: false,
+      // 监听所有地址
+      host: '0.0.0.0',
+      // 端口
       port: 4856,
-      hmr: {
-        host: '127.0.0.1',
-        port: 4856
-      },
+      // 服务启动时是否自动打开浏览器
+      open: true,
+      // 允许跨域
+      cors: true,
       // 设置 https 代理
       proxy: {
         '/m1/699628-0-default/api': {

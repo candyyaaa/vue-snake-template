@@ -2,8 +2,8 @@
  * @Description: <>
  * @Author: candy littlecandyi@163.com
  * @Date: 2022-11-08 01:14:12
- * @LastEditors: candy littlecandyi@163.com
- * @LastEditTime: 2022-12-19 01:12:40
+ * @LastEditors: menggt mengguotang@gdcattsoft.com
+ * @LastEditTime: 2023-01-29 16:51:21
 -->
 <template>
   <div v-loading="loading">
@@ -21,6 +21,7 @@
     <div>{{ dayjs().format('YYYY-MM-DD') }}</div>
 
     <el-button type="primary" @click="handleLogin">登录</el-button>
+    <el-button type="primary" @click="handleUserInfo">获取用户信息</el-button>
   </div>
 </template>
 
@@ -28,7 +29,7 @@
 import dayjs from 'dayjs'
 // import HelloWorld from "@/components/HelloWorld.vue"
 import UsePinia from '@/components/use-pinia.vue'
-import { login } from '@/api/user'
+import { login, getUserInfo } from '@/api/user'
 
 const loading = ref<boolean>(false)
 
@@ -49,6 +50,16 @@ const handleLogin = () => {
     })
     .finally(() => {
       loading.value = false
+    })
+}
+
+const handleUserInfo = () => {
+  getUserInfo()
+    .then((res) => {
+      console.log('getUserInfo then----------->', res)
+    })
+    .catch((err) => {
+      console.log('getUserInfo catch----------->', err)
     })
 }
 </script>

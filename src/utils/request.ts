@@ -1,10 +1,12 @@
+/*
+ * @Description: <>
+ * @Author: menggt mengguotang@gdcattsoft.com
+ * @Date: 2022-12-13 17:20:14
+ * @LastEditors: menggt mengguotang@gdcattsoft.com
+ * @LastEditTime: 2023-01-29 17:14:43
+ */
 import axios from 'axios'
-import type {
-  AxiosInstance,
-  AxiosError,
-  AxiosRequestConfig,
-  AxiosResponse
-} from 'axios'
+import type { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
 
 export interface Result<T = any> {
   code: number
@@ -12,19 +14,19 @@ export interface Result<T = any> {
   data: T
 }
 
-const service: AxiosInstance = axios.create({
+const service = axios.create({
   baseURL: '/m1/699628-0-default/api',
-  timeout: 30000
+  timeout: 30000,
+  responseType: 'json'
 })
 
 /* 请求拦截器 */
 service.interceptors.request.use(
-  (config: AxiosRequestConfig) => {
-    //  伪代码
+  (request: AxiosRequestConfig) => {
     // if (token) {
-    //   config.headers.Authorization = `Bearer ${token}`;
+    //   request.headers.Authorization = `Bearer ${token}`;
     // }
-    return config
+    return request
   },
   (error: AxiosError) => {
     console.log('error ----------->', error)
@@ -35,11 +37,10 @@ service.interceptors.request.use(
 /* 响应拦截器 */
 service.interceptors.response.use(
   (response: AxiosResponse) => {
+    console.log('response ----------->', response)
     const { code, message } = response.data
 
-    // 根据自定义错误码判断请求是否成功
     if (code === 200) {
-      // 将组件用的数据返回
       return response
     } else {
       // 处理业务错误。
