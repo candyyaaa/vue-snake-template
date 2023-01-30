@@ -24,7 +24,9 @@
     },
     "skipLibCheck": true,
     "noEmit": true,
-    "types": ["vite/client"]
+    "types": ["vite/client"],
+    // "严格模式" 解决声明常/变量当赋值为 undefined 和 null 时，会自动推断成 any
+    "strictNullChecks": true
   },
   "include": [
     "src/**/*.ts",
