@@ -2,17 +2,11 @@
  * @Description: <>
  * @Author: menggt mengguotang@gdcattsoft.com
  * @Date: 2022-12-13 17:20:14
- * @LastEditors: candy littlecandyi@163.com
- * @LastEditTime: 2023-01-29 22:58:21
+ * @LastEditors: menggt mengguotang@gdcattsoft.com
+ * @LastEditTime: 2023-01-31 10:10:13
  */
 import axios from 'axios'
 import type { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
-
-export interface Result<T = any> {
-  code: number
-  message: string
-  data: T
-}
 
 const service = axios.create({
   baseURL: '/m1/699628-0-default/api',

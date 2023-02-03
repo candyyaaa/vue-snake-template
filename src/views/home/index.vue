@@ -3,7 +3,7 @@
  * @Author: candy littlecandyi@163.com
  * @Date: 2022-11-08 01:14:12
  * @LastEditors: menggt mengguotang@gdcattsoft.com
- * @LastEditTime: 2023-01-30 16:02:49
+ * @LastEditTime: 2023-02-03 10:51:29
 -->
 <template>
   <div v-loading="loading">
@@ -19,7 +19,9 @@
     <UsePinia />
     <h1 class="ha">哈哈哈哈哈哈</h1>
     <div>{{ dayjs().format('YYYY-MM-DD') }}</div>
-
+    <div>
+      <BounceNumber :value="20000" :decimals="2" />
+    </div>
     <el-button type="primary" @click="handleLogin">登录</el-button>
     <el-button type="primary" @click="handleUserInfo">获取用户信息</el-button>
   </div>
