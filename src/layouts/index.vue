@@ -3,7 +3,7 @@
  * @Author: menggt mengguotang@gdcattsoft.com
  * @Date: 2022-12-15 15:43:19
  * @LastEditors: candy littlecandyi@163.com
- * @LastEditTime: 2022-12-19 00:44:16
+ * @LastEditTime: 2023-02-04 00:16:27
 -->
 <template>
   <div class="layouts-wrap">
@@ -32,6 +32,7 @@ import Header from './components/header/index.vue'
     transition: all 0.2s;
 
     .layout-header-wrap:not(.header-leave-active) + .app-main-wrapper {
+      height: 100%;
       padding-top: var(--g-header-height);
     }
   }

@@ -2,11 +2,11 @@
  * @Description: <数字滚动>
  * @Author: menggt mengguotang@gdcattsoft.com
  * @Date: 2023-02-02 15:50:58
- * @LastEditors: menggt mengguotang@gdcattsoft.com
- * @LastEditTime: 2023-02-03 10:52:23
+ * @LastEditors: candy littlecandyi@163.com
+ * @LastEditTime: 2023-02-03 23:51:35
 -->
 <script setup lang="ts">
-import { request, cancel } from './bounce-config'
+import { request, cancel } from './config'
 
 interface State {
   startVal: number

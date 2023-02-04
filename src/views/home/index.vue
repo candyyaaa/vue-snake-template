@@ -2,11 +2,11 @@
  * @Description: <>
  * @Author: candy littlecandyi@163.com
  * @Date: 2022-11-08 01:14:12
- * @LastEditors: menggt mengguotang@gdcattsoft.com
- * @LastEditTime: 2023-02-03 10:51:29
+ * @LastEditors: candy littlecandyi@163.com
+ * @LastEditTime: 2023-02-04 00:18:40
 -->
 <template>
-  <div v-loading="loading">
+  <div class="home-wrap" v-loading="loading">
     <div>
       <a href="https://vitejs.dev" target="_blank">
         <img src="/vite.svg" class="logo" alt="Vite logo" />
@@ -19,8 +19,12 @@
     <UsePinia />
     <h1 class="ha">哈哈哈哈哈哈</h1>
     <div>{{ dayjs().format('YYYY-MM-DD') }}</div>
-    <div>
-      <BounceNumber :value="20000" :decimals="2" />
+    <div class="container-box">
+      <Container>
+        <template v-slot:header>header</template>
+        <RollNumber :value="20000" :decimals="2" />
+        <template v-slot:footer>footer</template>
+      </Container>
     </div>
     <el-button type="primary" @click="handleLogin">登录</el-button>
     <el-button type="primary" @click="handleUserInfo">获取用户信息</el-button>
@@ -67,21 +71,32 @@ const handleUserInfo = () => {
 </script>
 
 <style scoped lang="scss">
-.logo {
-  height: $header-height;
-  padding: 1.5em;
-  will-change: filter;
-}
+.home-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
+  .logo {
+    height: $header-height;
+    padding: 1.5em;
+    will-change: filter;
+  }
 
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
 
-.ha {
-  @apply tw-w-full tw-text-pink-500;
+  .logo.vue:hover {
+    filter: drop-shadow(0 0 2em #42b883aa);
+  }
+
+  .ha {
+    @apply tw-w-full tw-text-pink-500;
+  }
+
+  .container-box {
+    width: 100%;
+    height: 500px;
+  }
 }
 </style>
