@@ -3,7 +3,7 @@
  * @Author: candy littlecandyi@163.com
  * @Date: 2022-11-08 00:53:21
  * @LastEditors: candy littlecandyi@163.com
- * @LastEditTime: 2023-02-05 01:36:48
+ * @LastEditTime: 2023-02-05 23:09:05
  */
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -16,6 +16,7 @@ import 'virtual:svg-icons-register'
 
 // 自定义组件
 import resize from '@/directives/resize'
+import longPress from '@/directives/long-press'
 
 const app = createApp(App)
 
@@ -27,4 +28,5 @@ app.use(router)
 app.use(ElementPlus)
 // 挂载 自定义指令
 app.use(resize)
+app.use(longPress)
 app.mount('#app')

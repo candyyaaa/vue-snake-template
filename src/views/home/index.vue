@@ -3,7 +3,7 @@
  * @Author: candy littlecandyi@163.com
  * @Date: 2022-11-08 01:14:12
  * @LastEditors: candy littlecandyi@163.com
- * @LastEditTime: 2023-02-05 02:25:08
+ * @LastEditTime: 2023-02-05 23:11:41
 -->
 <template>
   <div class="home-wrap" v-loading="loading">
@@ -17,7 +17,7 @@
     </div>
     <HelloWorld msg="Vite + Vue" />
     <UsePinia />
-    <h1 class="ha">哈哈哈哈哈哈</h1>
+    <h1 class="ha" v-longPress="testLongPress">哈哈哈哈哈哈</h1>
     <div>{{ dayjs().format('YYYY-MM-DD') }}</div>
     <div class="area-chart">
       <ChartsBox :options="option" />
@@ -254,6 +254,10 @@ const option = {
       data: [220, 302, 181, 234, 210, 290, 150]
     }
   ]
+}
+
+const testLongPress = (e: HTMLElement) => {
+  console.log('长按事件 ?----------->', e)
 }
 </script>
 
