@@ -1,4 +1,5 @@
 {
-  "scss.lint.unknownAtRules": "ignore",
-  "typescript.tsdk": "node_modules\\typescript\\lib"
+	"scss.lint.unknownAtRules": "ignore",
+	"typescript.tsdk": "node_modules\\typescript\\lib",
+	"vue3snippets.enable-compile-vue-file-on-did-save-code": false
 }

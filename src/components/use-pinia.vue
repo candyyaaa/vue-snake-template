@@ -6,7 +6,7 @@
  * @LastEditTime: 2022-11-08 01:51:07
 -->
 <template>
-  <div>{{ 'userStore.name' }}</div>
+	<div>{{ 'userStore.name' }}</div>
 </template>
 
 <script lang="ts" setup>

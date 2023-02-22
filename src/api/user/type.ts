@@ -8,22 +8,22 @@
 
 // 登陆参数类型
 export interface LoginParams {
-  account: string
-  password: string
+	account: string
+	password: string
 }
 
 // 登录返回类型
 export interface LoginRes {
-  token: string
-  tokenType: string
+	token: string
+	tokenType: string
 }
 
 // 获取用户信息返回类型
 export interface UserInfoRes {
-  account: string
-  id: number
-  username: string
-  gender: string
-  age: number
-  phone: string
+	account: string
+	id: number
+	username: string
+	gender: string
+	age: number
+	phone: string
 }

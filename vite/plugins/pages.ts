@@ -8,8 +8,8 @@
 import pages from 'vite-plugin-pages'
 
 export default function createPages() {
-  return pages({
-    dirs: 'src/views',
-    exclude: ['**/components/**/*.vue']
-  })
+	return pages({
+		dirs: 'src/views',
+		exclude: ['**/components/**/*.vue']
+	})
 }

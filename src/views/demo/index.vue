@@ -8,16 +8,16 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="demo-wrap">
-    <h1>demo</h1>
-  </div>
+	<div class="demo-wrap">
+		<h1>demo</h1>
+	</div>
 </template>
 
 <style lang="scss" scoped>
 .demo-wrap {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  overflow-y: auto;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	overflow-y: auto;
 }
 </style>

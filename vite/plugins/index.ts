@@ -17,23 +17,20 @@ import createCompression from './compression'
 import createPages from './pages'
 import createImagemin from './imagemin'
 
-export default function createVitePlugins(
-  viteEnv: Record<string, string>,
-  isBuild = false
-) {
-  const vitePlugins: (PluginOption | PluginOption[])[] = [
-    vue({
-      reactivityTransform: true
-    })
-  ]
-  vitePlugins.push(createAutoImport())
-  vitePlugins.push(createComponents())
-  vitePlugins.push(createIcons())
-  vitePlugins.push(createProgress())
-  vitePlugins.push(createSvgIcons(isBuild))
-  isBuild && vitePlugins.push(createCompression(viteEnv))
-  vitePlugins.push(createPages())
-  vitePlugins.push(createImagemin())
+export default function createVitePlugins(viteEnv: Record<string, string>, isBuild = false) {
+	const vitePlugins: (PluginOption | PluginOption[])[] = [
+		vue({
+			reactivityTransform: true
+		})
+	]
+	vitePlugins.push(createAutoImport())
+	vitePlugins.push(createComponents())
+	vitePlugins.push(createIcons())
+	vitePlugins.push(createProgress())
+	vitePlugins.push(createSvgIcons(isBuild))
+	isBuild && vitePlugins.push(createCompression(viteEnv))
+	vitePlugins.push(createPages())
+	vitePlugins.push(createImagemin())
 
-  return vitePlugins
+	return vitePlugins
 }

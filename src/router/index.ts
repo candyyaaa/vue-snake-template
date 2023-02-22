@@ -11,61 +11,61 @@ import type { RouteRecordRaw } from 'vue-router'
 import { start, done } from '@/utils/nporgress'
 
 const routes: RouteRecordRaw[] = [
-  // {
-  //   path: '/',
-  //   name: 'Index',
-  //   meta: {
-  //     title: '首页',
-  //     keepAlive: true,
-  //     requireAuth: true
-  //   },
-  //   component: () => import('@/views/home/index.vue')
-  // },
-  {
-    path: '/',
-    meta: {
-      title: '首页',
-      keepAlive: true,
-      requireAuth: true
-    },
-    component: () => import('@/layouts/index.vue'),
-    children: [
-      {
-        path: '',
-        name: 'Home',
-        meta: {
-          title: '首页',
-          breadcrumb: false
-        },
-        component: () => import('@/views/home/index.vue')
-      }
-    ]
-  },
-  {
-    path: '/login',
-    name: 'Login',
-    meta: {
-      title: '登录',
-      keepAlive: true,
-      requireAuth: false
-    },
-    component: () => import('@/views/login/index.vue')
-  }
+	// {
+	//   path: '/',
+	//   name: 'Index',
+	//   meta: {
+	//     title: '首页',
+	//     keepAlive: true,
+	//     requireAuth: true
+	//   },
+	//   component: () => import('@/views/home/index.vue')
+	// },
+	{
+		path: '/',
+		meta: {
+			title: '首页',
+			keepAlive: true,
+			requireAuth: true
+		},
+		component: () => import('@/layouts/index.vue'),
+		children: [
+			{
+				path: '',
+				name: 'Home',
+				meta: {
+					title: '首页',
+					breadcrumb: false
+				},
+				component: () => import('@/views/home/index.vue')
+			}
+		]
+	},
+	{
+		path: '/login',
+		name: 'Login',
+		meta: {
+			title: '登录',
+			keepAlive: true,
+			requireAuth: false
+		},
+		component: () => import('@/views/login/index.vue')
+	}
 ]
 
 const router = createRouter({
-  history: createWebHistory('/snake/'),
-  routes
+	history: createWebHistory('/snake/'),
+	routes
 })
 
 // 路由切换之前触发
 router.beforeEach((pre, next) => {
-  start()
+	start()
 })
 
 // 路由切换完成后触发
 router.afterEach(() => {
-  done()
+	done()
 })
 
 export default router

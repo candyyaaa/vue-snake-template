@@ -9,10 +9,10 @@ import { resolve } from 'path'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 export default function createSvgIcons(isBuild: boolean) {
-  return createSvgIconsPlugin({
-    iconDirs: [resolve(process.cwd(), 'src/assets/icons/')],
-    symbolId: 'icon-[dir]-[name]',
-    // 用于压缩SVG
-    svgoOptions: isBuild
-  })
+	return createSvgIconsPlugin({
+		iconDirs: [resolve(process.cwd(), 'src/assets/icons/')],
+		symbolId: 'icon-[dir]-[name]',
+		// 用于压缩SVG
+		svgoOptions: isBuild
+	})
 }

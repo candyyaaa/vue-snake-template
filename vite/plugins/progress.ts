@@ -9,10 +9,8 @@ import progress from 'vite-plugin-progress'
 import colors from 'picocolors'
 
 export default function createProgress() {
-  return progress({
-    format: `${colors.green(colors.bold('Building'))} ${colors.cyan(
-      '[:bar]'
-    )} :percent | Time: :elapseds`,
-    width: 100
-  })
+	return progress({
+		format: `${colors.green(colors.bold('Building'))} ${colors.cyan('[:bar]')} :percent | Time: :elapseds`,
+		width: 100
+	})
 }

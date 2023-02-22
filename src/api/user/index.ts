@@ -14,7 +14,7 @@ import type { LoginParams, LoginRes, UserInfoRes } from './type'
  * @return {*}
  */
 export const login = (params: LoginParams) => {
-  return http.postForm<LoginRes>('/user/login', params)
+	return http.postForm<LoginRes>('/user/login', params)
 }
 
 /**
@@ -22,5 +22,5 @@ export const login = (params: LoginParams) => {
  * @return {*}
  */
 export const getUserInfo = () => {
-  return http.get<UserInfoRes>('/user/getUserInfo')
+	return http.get<UserInfoRes>('/user/getUserInfo')
 }

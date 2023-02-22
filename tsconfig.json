@@ -1,41 +1,34 @@
 {
-  "compilerOptions": {
-    "typeRoots": [
-      // 默认值
-      "node_modules/@types",
-      "types"
-    ],
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "strict": true,
-    "jsx": "preserve",
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "lib": ["ESNext", "DOM"],
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["src/*"],
-      "#/*": ["types/*"]
-    },
-    "skipLibCheck": true,
-    "noEmit": true,
-    "types": ["vite/client"],
-    // "严格模式" 解决声明常/变量当赋值为 undefined 和 null 时，会自动推断成 any
-    "strictNullChecks": true
-  },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "types/**/*.ts",
-    "types/**/*.d.ts"
-  ],
-  "exclude": ["node_modules"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+	"compilerOptions": {
+		"typeRoots": [
+			// 默认值
+			"node_modules/@types",
+			"types"
+		],
+		"target": "ESNext",
+		"useDefineForClassFields": true,
+		"module": "ESNext",
+		"moduleResolution": "Node",
+		"strict": true,
+		"jsx": "preserve",
+		"sourceMap": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"lib": ["ESNext", "DOM"],
+		"baseUrl": "./",
+		"paths": {
+			"@/*": ["src/*"],
+			"#/*": ["types/*"]
+		},
+		"skipLibCheck": true,
+		"noEmit": true,
+		"types": ["vite/client"],
+		// "严格模式" 解决声明常/变量当赋值为 undefined 和 null 时，会自动推断成 any
+		"strictNullChecks": true
+	},
+	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "types/**/*.ts", "types/**/*.d.ts"],
+	"exclude": ["node_modules"],
+	"references": [{ "path": "./tsconfig.node.json" }]
 }

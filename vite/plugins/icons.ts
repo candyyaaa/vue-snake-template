@@ -8,9 +8,9 @@
 import icons from 'unplugin-icons/vite'
 
 export default function createIcons() {
-  return icons({
-    compiler: 'vue3',
-    defaultClass: 'iconify-icon',
-    autoInstall: true
-  })
+	return icons({
+		compiler: 'vue3',
+		defaultClass: 'iconify-icon',
+		autoInstall: true
+	})
 }

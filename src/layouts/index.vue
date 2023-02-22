@@ -6,15 +6,15 @@
  * @LastEditTime: 2023-02-04 00:16:27
 -->
 <template>
-  <div class="layouts-wrap">
-    <div class="app-main" id="appMain">
-      <Header />
+	<div class="layouts-wrap">
+		<div class="app-main" id="appMain">
+			<Header />
 
-      <div class="app-main-wrapper">
-        <router-view></router-view>
-      </div>
-    </div>
-  </div>
+			<div class="app-main-wrapper">
+				<router-view></router-view>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script setup lang="ts">
@@ -23,18 +23,18 @@ import Header from './components/header/index.vue'
 
 <style lang="scss" scoped>
 .layouts-wrap {
-  height: 100%;
+	height: 100%;
 
-  .app-main {
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    transition: all 0.2s;
+	.app-main {
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		transition: all 0.2s;
 
-    .layout-header-wrap:not(.header-leave-active) + .app-main-wrapper {
-      height: 100%;
-      padding-top: var(--g-header-height);
-    }
-  }
+		.layout-header-wrap:not(.header-leave-active) + .app-main-wrapper {
+			height: 100%;
+			padding-top: var(--g-header-height);
+		}
+	}
 }
 </style>

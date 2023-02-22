@@ -11,59 +11,59 @@ import type { App, Directive, DirectiveBinding } from 'vue'
 let pressTimer: ReturnType<typeof setTimeout> = 0
 
 const inserted = (el: HTMLElement, binding: DirectiveBinding) => {
-  if (typeof binding.value !== 'function') {
-    throw 'callback must be a function'
-  }
+	if (typeof binding.value !== 'function') {
+		throw 'callback must be a function'
+	}
 
-  // 创建计时器（ 2秒后执行函数 ）
-  const start = (e: any) => {
-    if (e.button) {
-      if (e.type === 'click' && e.button !== 0) {
-        return
-      }
-    }
-    if (!pressTimer) {
-      pressTimer = setTimeout(() => {
-        handler(e)
-      }, 1000)
-    }
-  }
+	// 创建计时器（ 2秒后执行函数 ）
+	const start = (e: any) => {
+		if (e.button) {
+			if (e.type === 'click' && e.button !== 0) {
+				return
+			}
+		}
+		if (!pressTimer) {
+			pressTimer = setTimeout(() => {
+				handler(e)
+			}, 1000)
+		}
+	}
 
-  // 取消计时器
-  const cancel = () => {
-    if (!pressTimer) {
-      clearTimeout(pressTimer)
-      pressTimer = 0
-    }
-  }
+	// 取消计时器
+	const cancel = () => {
+		if (!pressTimer) {
+			clearTimeout(pressTimer)
+			pressTimer = 0
+		}
+	}
 
-  // 运行函数
-  const handler = (e: MouseEvent | TouchEvent) => {
-    binding.value(e)
-  }
+	// 运行函数
+	const handler = (e: MouseEvent | TouchEvent) => {
+		binding.value(e)
+	}
 
-  // 添加事件监听器
-  el.addEventListener('mousedown', start)
-  el.addEventListener('touchstart', start)
-  // 取消计时器
-  el.addEventListener('click', cancel)
-  el.addEventListener('mouseout', cancel)
-  el.addEventListener('touchend', cancel)
-  el.addEventListener('touchcancel', cancel)
+	// 添加事件监听器
+	el.addEventListener('mousedown', start)
+	el.addEventListener('touchstart', start)
+	// 取消计时器
+	el.addEventListener('click', cancel)
+	el.addEventListener('mouseout', cancel)
+	el.addEventListener('touchend', cancel)
+	el.addEventListener('touchcancel', cancel)
 }
 
 const unbind = () => {
-  clearTimeout(pressTimer)
-  pressTimer = 0
+	clearTimeout(pressTimer)
+	pressTimer = 0
 }
 
 const longPress: Directive = {
-  mounted: inserted,
-  unmounted: unbind
+	mounted: inserted,
+	unmounted: unbind
 }
 
 export default {
-  install(app: App) {
-    app.directive('longPress', longPress)
-  }
+	install(app: App) {
+		app.directive('longPress', longPress)
+	}
 }

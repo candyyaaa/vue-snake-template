@@ -6,3 +6,5 @@ build/
 .vscode
 .github
 .husky
+types/auto-import.d.ts
+types/components.d.ts

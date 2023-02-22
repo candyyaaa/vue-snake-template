@@ -10,18 +10,18 @@ import type { Menu } from '#/global'
 import { login } from '@/api/user'
 
 export const useMenuStore = defineStore('menu', {
-  state: () => {
-    const active = ref(0)
+	state: () => {
+		const active = ref(0)
 
-    const menus = ref<Menu.recordMainRaw[]>([
-      {
-        meta: {},
-        children: []
-      }
-    ])
+		const menus = ref<Menu.recordMainRaw[]>([
+			{
+				meta: {},
+				children: []
+			}
+		])
 
-    return {
-      active
-    }
-  }
+		return {
+			active
+		}
+	}
 })
